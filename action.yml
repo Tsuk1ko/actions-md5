@@ -13,4 +13,7 @@ runs:
   steps:
     - id: md5
       shell: bash
-      run: echo digest=$(md5sum ${{ inputs.path }} | cut -d ' ' -f 1) >> "$GITHUB_OUTPUT"
+      run: |
+        digest=$(md5sum ${{ inputs.path }} | cut -d ' ' -f 1)
+        echo $digest
+        echo digest=$digest >> "$GITHUB_OUTPUT"
