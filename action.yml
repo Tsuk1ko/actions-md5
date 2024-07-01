@@ -7,7 +7,7 @@ inputs:
 outputs:
   digest:
     description: MD5 hex digest
-    value: ${{ steps.md5.outputs.version-changed }}
+    value: ${{ steps.md5.outputs.digest }}
 runs:
   using: composite
   steps:
